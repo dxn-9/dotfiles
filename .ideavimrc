@@ -1,1 +1,37 @@
-/Users/dan/.ideavimrc
+""" In case you get lost: https://vim.rtorr.com/
+""" https://github.com/JetBrains/ideavim
+
+let mapleader=" "
+" HANDLERS
+sethandler <C-o> a:ide
+sethandler <C-u> a:vim
+sethandler <C-v> a:ide
+sethandler <C-w> a:vim
+sethandler <C-c> a:ide
+sethandler <C-ò> a:ide
+sethandler <C-p> a:ide
+
+" Use the OS clipboard by default
+set clipboard=unnamed
+
+" Enable native idea paste action for put operations
+set clipboard+=ideaput
+set relativenumber
+set incsearch
+"""
+
+" Plugins
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+" Actions remap
+nmap gh <Action>(ShowHoverInfo)
+nmap bo <Action>(CloseAllEditorsButActive)
+nmap <leader>vr <Action>(IdeaVim.ReloadVimRc.reload)
+nmap <leader>w :w<CR>
+nmap <A-l> <Action>(NextTab)
+nmap <A-h> <Action>(PreviousTab)
+nmap <C-S-d> <Action>(Notification)
+nmap <leader>q <Action>(CloseContent)
+map \b <Action>(ToggleLineBreakpoint)
